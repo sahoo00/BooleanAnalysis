@@ -271,7 +271,7 @@ def plotViolin(data, atypes, params):
                 order = atypes)
         xlim = ax.get_xlim()
         ylim = ax.get_ylim()
-        ax = sns.swarmplot(x="category", y="score", color = 'blue', alpha=0.2,
+        ax = sns.swarmplot(x="category", y="score", palette = 'dark:blue', alpha=0.2,
                 hue='category', ax=ax, data=df, order = atypes)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
@@ -288,7 +288,7 @@ def plotViolin(data, atypes, params):
                 order = atypes)
         xlim = ax.get_xlim()
         ylim = ax.get_ylim()
-        ax = sns.swarmplot(x="score", y="category", color = 'blue', alpha=0.2,
+        ax = sns.swarmplot(x="score", y="category", palette = 'dark:blue', alpha=0.2,
                 hue='category', ax=ax, data=df, order = atypes)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
