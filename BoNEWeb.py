@@ -72,7 +72,7 @@ def getRanksDf2(gene_groups, df_g, df_e, df_t):
         avgrank = [0 for i in order]
         noisemargin = 0
         for j in df_g[k]['idx']:
-            e = df_e[k].iloc[j,:]
+            e = df_e[k].iloc[j,:].to_list()
             t = df_t[k]['thr2'][j]
             if e[-1] == "":
                 continue
