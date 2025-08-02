@@ -268,11 +268,11 @@ def plotViolin(data, atypes, params):
     if 'vert' in params and params['vert'] == 1:
         ax = sns.violinplot(x="category", y="score", inner='quartile',
                 hue='category', linewidth=0.5, width=width, ax = ax, data=df,
-                order = atypes)
+                order = atypes, dodge=False)
         xlim = ax.get_xlim()
         ylim = ax.get_ylim()
         ax = sns.swarmplot(x="category", y="score", palette = 'dark:blue', alpha=0.2,
-                hue='category', ax=ax, data=df, order = atypes)
+                hue='category', ax=ax, data=df, order = atypes, dodge=False)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
         ax.set_xlabel("")
@@ -282,14 +282,15 @@ def plotViolin(data, atypes, params):
                     horizontalalignment='center', size=12,
                     color='0.3')
         ax.yaxis.grid(True, clip_on=False)
+        ax.legend([], [], frameon=False)
     else:
         ax = sns.violinplot(x="score", y="category", inner='quartile',
                 hue='category', linewidth=0.5, width=width, ax = ax, data=df,
-                order = atypes)
+                order = atypes, dodge=False)
         xlim = ax.get_xlim()
         ylim = ax.get_ylim()
         ax = sns.swarmplot(x="score", y="category", palette = 'dark:blue', alpha=0.2,
-                hue='category', ax=ax, data=df, order = atypes)
+                hue='category', ax=ax, data=df, order = atypes, dodge=False)
         ax.set_xlim(xlim)
         ax.set_ylim(ylim)
         ax.set_ylabel("")
@@ -299,6 +300,7 @@ def plotViolin(data, atypes, params):
                     horizontalalignment='center', size=12,
                     color='0.3')
         ax.xaxis.grid(True, clip_on=False)
+        ax.legend([], [], frameon=False)
     return ax
 
 def plotViolinBar(ana, desc=None):
